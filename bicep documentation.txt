@@ -1,0 +1,78 @@
+//building storage storageAccountsmanulayy
+
+// resource storage 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+//   name: 'mystoragevinay123'
+//   location: 'East US'
+//   sku: {
+//     name: 'Standard_LRS'
+//   }
+//   kind: 'StorageV2'
+// }
+``
+
+
+
+// this is for paramenters by param keyword we will directly access the location and while deploying we will storage name 
+
+param location string = 'East US'
+param storageName string
+
+resource storage 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+  name: storageName
+  location: location
+}
+az deployment group create \
+  --resource-group vinay-rg \
+  --template-file main.bicep \
+  --parameters storageName=vinaystorage123 (in this params we can give any num of values what we want)
+    
+
+// by accessing the prefix character with initialized name 
+var prefix = 'vinay'
+
+resource storage 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+  name: '${prefix}storage123'
+
+}
+// for the output 
+output storageId string = storage.id (we will get in that last bline )
+
+
+param vmName string = 'vinayVM'
+var prefix = 'vinay'
+resource vm 'Microsoft.Compute/virtualMachines@2023-03-01' = {
+  name: '${prefix}${vmName}'
+  location: resourceGroup().location
+}
+// for multiple varcomibantion  name: '${prefix}${vmName}'
+
+
+
+//// @description('Storage Account Name')
+param storageName string
+
+@description('Location')
+param location string = resourceGroup().location
+
+@description('Storage SKU')
+param skuName string = 'Standard_LRS'
+
+resource stg 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+  name: storageName
+  location: location
+  sku: {
+    name: skuName
+  }
+  kind: 'StorageV2'
+}
+//az deployment group create \
+  --resource-group vinay-rg \
+  --template-file storage.bicep \
+  --parameters storageName=vinaystorage123 \
+               skuName=Standard_LRS
+
+//az deployment vm group 
+az deployment group create  --resource-group bicep-rg  --template-file userinpvm.bicep  --parameters vm.parameters.json sshPublicKey="$(cat ~/.ssh/id_rsa.pub)" 
+with params passing inside the bicep file 
+az deployment group create   --resource-group bicep-rg  --template-file vm.bicep  --parameters sshPublicKey="$(cat ~/.ssh/id_rsa.pub)"
+                                     
