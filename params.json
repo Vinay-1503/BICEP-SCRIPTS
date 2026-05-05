@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "australiaeast"
+    },
+    "vmName": {
+      "value": "vinay-vm"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "sshPublicKey": {
+      "value": "AAAAB3NzaC1yc2EAAAADAQABAAACAQDNePXeqrxd1cUwrGQB07M08CEM/99qJzfkhSk1zVvIu+gI/+XWQni5Bw8ecrJoz63f8Ocngwu5xyDaK1wmxQzyQsNWxrlqDUVpu7KHmoPOMLO2KS8yXTk7JyxxTCaga+PbwjhFun5w2DXSWQgYtwqsAbdc0rBHFYYH7ruZFAvZ4gHZiKyiGlYwI6xjgHmYst0NdNipdeCIXjapiTp6lWNS7K5BmvTFj+EFxlYwgcrXtoRJV/0hQE4nJQQjrRAz8ZDOM6TaPWrT9iVryfyVWHHr8e9AXv2nR9d2n/nS29aRWs2vecZQLlqzvCeK+SnPIGb+Hol8rwN9AqE9JrUiCmAXjvOVnUNKL4fnKkfmNYPYcoQIrfru0smzMpTzwVKJx4RN/fXNL5kqnzIaIdPL5P1BDqxaPOGJv3YyXElousJzNorPl9VCNyDmmGTmvmpsKByOP5kr4HNG1VFhAtHGaR/OL4kc1B/+ntz6r3UqKfLU33wjNh4sqA2rlNvoLXrcPNvtx++HVWF0xWa8Q7994+IREO3Z0fp11aX7I8Cp6fKTIRCzavBGLlyAcslRUVX7MUIICEzsGo5MnE6Nr5n55ELzz8JA8gjg+O9ajpc6kiWC5B/A4YKuC+yYO0Ya1A61AgAwl9fAzfiJUVosqUpuqeRkM1YaaXRuGt7Wa4SwaqXOQw=="
+    },
+    "vmSize": {
+      "value": "Standard_B2ats_v2"
+    },
+    "vnetName": {
+      "value": "vinay-vnet"
+    },
+    "subnetName": {
+      "value": "vinay-subnet"
+    },
+    "addressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "subnetPrefix": {
+      "value": "10.0.0.0/24"
+    },
+    "enableNSG": {
+      "value": true
+    },
+    "openPorts": {
+      "value": [22, 80]
+    },
+    "zone": {
+      "value": "2"
+    }
+  }
+}
