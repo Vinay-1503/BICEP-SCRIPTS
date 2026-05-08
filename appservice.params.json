@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "dotnetwebapplication"
+    },
+    "location": {
+      "value": "East US"
+    },
+    "appServicePlanName": {
+      "value": "dotnetwebapplication-plan"
+    },
+    "sku": {
+      "value": "B1"
+    },
+    "runtimeStack": {
+      "value": "DOTNETCORE|8.0"
+    }
+  }
+}
